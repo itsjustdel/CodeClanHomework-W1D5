@@ -24,7 +24,7 @@ def get_stock_count(pet_shop):
     return len( pet_shop["pets"] )
 
 def get_pets_by_breed(pet_shop, breed):
-    #create a list to retun
+    # create a list to retun
     breeds_matched = []
     for pet in pet_shop["pets"]:
         #string comparison between dictionary and parameter
@@ -62,7 +62,7 @@ def remove_customer_cash(customer, cash_to_remove):
     customer["cash"] -= cash_to_remove
 
 def get_customer_pet_count(customer):
-    #return the length of the list "pets" in the customer dictionary
+    # return the length of the list "pets" in the customer dictionary
     return len( customer["pets"])
 
 def add_pet_to_customer(customer,new_pet):
@@ -80,14 +80,14 @@ def customer_can_afford_pet(customer, new_pet):
         return False
 
 def sell_pet_to_customer(pet_shop, pet, customer):
-    #steps to sell a pet
+    # steps to sell a pet
     # remove pet from pet shop's stock if there and customer has enough money
     if(pet == None or customer_can_afford_pet(customer,pet) == False):
         # can't do business, get out of here! - return a fail with 0 or False
         return 0
 
-    #let's take the pet out of the shop's list,
-    #if we made it to this point in the script, we can do business
+    # let's take the pet out of the shop's list,
+    # if we made it to this point in the script, we can do business
     remove_pet_by_name(pet_shop, pet["name"])
 
     # add a pet to customers pets list
